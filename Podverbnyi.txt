@@ -4,7 +4,7 @@ d = []
 for i in iter(int, 1):
     Properties = input("\nВведите действие: \n1)Добавить машину в гараж \n2)Характеристики машины \n3)Информация о машинах \n4)Удалить машину \n5)Выйти из программы\n")
    
-    #ПЕРВЫЙ ПУНКт   
+    #ПЕРВЫЙ ПУНКТ   
     if '1' in Properties:
         print("\nХорошо! Автомобиль добавлен в гараж")
         a.append("Новая машина")
@@ -15,25 +15,37 @@ for i in iter(int, 1):
             #Пишем количество дверей. Задается 3 попытки. При провале программа выходит.
             for j in range(4):
                 Doors = input("\nВведите нужное количество дверей для машины: ")
-                if "2" or "4" in Doors:
+                if "2" or "3" or "4" or "5" in Doors:
                     if "2" in Doors:
                         print("\nВаша машина имеет 2 двери")
                         break
+                    elif "3" in Doors:
+                        print("\nВаша машина имеет 3 двери")
+                        break
                     elif "4" in Doors:
                         print("\nВаша машина имеет 4 двери")
+                        break
+                    elif "5" in Doors:
+                        print("\nВаша машина имеет 5 дверей")
                         break
                     else:
                         print("\nНельзя использовать такое количество дверей! Попробуйте снова. ")
        
             #Теперь вводим цвет, который нам нужен. Для простоты ограничемся несколько цветами.
             for k in range(4):
-                Color = input("\nКакой цвет машины вы предпочитаете? Из доступных есть: Красный, желтый, синий, черный или белый цвет. ")
+                Color = input("\nКакой цвет машины вы предпочитаете? Из доступных есть: Красный, оранжевый, зеленый, желтый, синий, черный или белый цвет. ")
                 if "Красный" in Color or "красный" in Color or "Желтый" in Color or "желтый" in Color or "Жёлтый" in Color or "жёлтый" in Color or "Синий" in Color or "синий" in Color or "Черный" in Color or "черный" in Color or "Чёрный" in Color or "чёрный" in Color or "Белый" in Color or "белый" in Color:
                     if "Красный" in Color or "красный" in Color:
                         print("\nВаша машина красного цвета")
                         break
                     elif "Желтый" in Color or "желтый" in Color or "жёлтый" in Color or "Жёлтый" in Color:
                         print("\nВаша машина желтого цвета")
+                        break
+                    elif "Оранжевый" in Color or "оранжевый" in Color:
+                        print("\nВаша машина оранжевого цвета")
+                        break
+                    elif "Зеленый" in Color or "зеленый" in Color or "Зелёный" in Color or "зелёный" in Color:
+                        print("\nВаша машина зеленого цвета")
                         break
                     elif "Синий" in Color or "синий" in Color:
                         print("\nВаша машина синего цвета")
@@ -49,19 +61,20 @@ for i in iter(int, 1):
 
             #Вводим объем двигателя
             for h in range(4):
-                Engine = input("\nВведите объем двигателя. Из доступных: 1.1, 1.7, 3.5 литровые. ")
-                if "1.1" in Engine or "1,1" in Engine or "1.7" in Engine or "1,7" in Engine or "3.5"  in Engine or "3,5" in Engine:
-                    if "1.1" in Engine or "1,1" in Engine:
-                        print("\nВаш двигатель имеет объем 1.1 литр")
+                Engine = input("\nВведите объем двигателя (н-р, 2.4).")
+                if (Engine<='1.1') or ((Engine>='1.2') and (Engine<='1.7')) or ((Engine>='1.8') and (Engine<='3.5')) or (Engine>'3.5'):
+                    if (Engine<='1.1'):
+                        print("\nВаш двигатель микролитражный")
                         break
-                    elif "1.7" in Engine or "1,7" in Engine:
-                         print("\nВаш двигатель имеет объем 1.7 литра")
+                    elif ((Engine>='1.2') and (Engine<='1.7')):
+                         print("\nВаш двигатель малолитражный")
                          break
-                    elif "3.5"  in Engine or "3,5" in Engine:
-                        print("\nВаш двигатель имеет объем 3.5 литра")
+                    elif ((Engine>='1.8') and (Engine<='3.5')):
+                        print("\nВаш двигатель среднелитражный")
                         break
-                else:
-                    print("\nТакой объем двигателя не доступен или не существует вообще!")
+                    elif (Engine>'3.5'):
+                        print("\nВаш двигатель крупнолитражный")
+                        break
 
             #Марка машины
             Brand = input("\nКакую марку машины Вы предпочитаете? ")
@@ -118,13 +131,21 @@ for i in iter(int, 1):
                         elif '2' in Rechange:
                             for j in range(4):
                                 Doors = input("\nВведите нужное количество дверей для машины: ")
-                                if "2" or "4" in Doors:
+                                if "2" or "3" or "4" or "5" in Doors:
                                     if "2" in Doors:
                                         print("\nВаша машина имеет 2 двери")
                                         d[1+4*int(Change1)] = Doors 
                                         break
+                                    elif "3" in Doors:
+                                        print("\nВаша машина имеет 3 двери")
+                                        d[1+4*int(Change1)] = Doors 
+                                        break
                                     elif "4" in Doors:
                                         print("\nВаша машина имеет 4 двери")
+                                        d[1+4*int(Change1)] = Doors 
+                                        break
+                                    elif "5" in Doors:
+                                        print("\nВаша машина имеет 5 дверей")
                                         d[1+4*int(Change1)] = Doors 
                                         break
                                     else:
@@ -132,7 +153,7 @@ for i in iter(int, 1):
                                         
                         elif '3' in Rechange:
                             for k in range(4):
-                                Color = input("\nКакой цвет машины вы предпочитаете? Из доступных есть: Красный, желтый, синий, черный или белый цвет. ")
+                                Color = input("\nКакой цвет машины вы предпочитаете? Из доступных есть: Красный, желтый, оранжевый, зеленый, синий, черный или белый цвет. ")
                                 if "Красный" in Color or "красный" in Color or "Желтый" in Color or "желтый" in Color or "Жёлтый" in Color or "жёлтый" in Color or "Синий" in Color or "синий" in Color or "Черный" in Color or "черный" in Color or "Чёрный" in Color or "чёрный" in Color or "Белый" in Color or "белый" in Color:
                                     if "Красный" in Color or "красный" in Color:
                                         print("\nВаша машина красного цвета")
@@ -140,6 +161,14 @@ for i in iter(int, 1):
                                         break
                                     elif "Желтый" in Color or "желтый" in Color or "жёлтый" in Color or "Жёлтый" in Color:
                                         print("\nВаша машина желтого цвета")
+                                        d[2+4*int(Change1)] = Color
+                                        break
+                                    elif "Оранжевый" in Color or "оранжевый" in Color:
+                                        print("\nВаша машина оранжевого цвета")
+                                        d[2+4*int(Change1)] = Color
+                                        break
+                                    elif "Зелёный" in Color or "зелёный" in Color or "Зеленый" in Color or "зеленый" in Color:
+                                        print("\nВаша машина зеленого цвета")
                                         d[2+4*int(Change1)] = Color
                                         break
                                     elif "Синий" in Color or "синий" in Color:
@@ -158,22 +187,24 @@ for i in iter(int, 1):
                                     print("\nТакой цвет недоступен или не существует вообще!")
                         elif '4' in Rechange:
                             for h in range(4):
-                                Engine = input("\nВведите объем двигателя. Из доступных: 1.1, 1.7, 3.5 литровые. ")
-                                if "1.1" in Engine or "1,1" in Engine or "1.7" in Engine or "1,7" in Engine or "3.5"  in Engine or "3,5" in Engine:
-                                    if "1.1" in Engine or "1,1" in Engine:
-                                        print("\nВаш двигатель имеет объем 1.1 литр")
+                                Engine = input("\nВведите объем двигателя (н-р, 2.4).")
+                                if (Engine<='1.1') or ((Engine>='1.2') and (Engine<='1.7')) or ((Engine>='1.8') and (Engine<='3.5')) or (Engine>'3.5'):
+                                    if (Engine<='1.1'):
+                                        print("\nВаш двигатель микролитражный")
                                         d[3+4*int(Change1)] = Engine
                                         break
-                                    elif "1.7" in Engine or "1,7" in Engine:
-                                        print("\nВаш двигатель имеет объем 1.7 литра")
+                                    elif ((Engine>='1.2') and (Engine<='1.7')):
+                                        print("\nВаш двигатель малолитражный")
                                         d[3+4*int(Change1)] = Engine
                                         break
-                                    elif "3.5"  in Engine or "3,5" in Engine:
-                                        print("\nВаш двигатель имеет объем 3.5 литра")
+                                    elif ((Engine>='1.8') and (Engine<='3.5')):
+                                        print("\nВаш двигатель среднелитражный")
                                         d[3+4*int(Change1)] = Engine
                                         break
-                                else:
-                                    print("\nТакой объем двигателя не доступен или не существует вообще!")                                               
+                                    elif (Engine>'3.5'):
+                                        print("\nВаш двигатель крупнолитражный")
+                                        d[3+4*int(Change1)] = Engine
+                                        break                                             
                         break
                 else:
                     c += 1
